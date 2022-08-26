@@ -14,7 +14,8 @@
     "vsc": "sdks vscode",
     "build": "yarn workspaces foreach -piv --topological-dev -j 2 run build",
     "lint": "yarn workspaces foreach -ptv -j 2 run lint",
-    "start": "yarn workspaces foreach -piv -j 2 run start"
+    "start": "yarn workspaces foreach -piv -j 2 run start",
+    "test": "yarn run cypress open"
   },
   "devDependencies": {
     "@babel/core": "7.14.8",
@@ -51,5 +52,8 @@
       "unplugged": true
     }
   },
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@3.0.0",
+  "dependencies": {
+    "cypress": "^10.6.0"
+  }
 }
