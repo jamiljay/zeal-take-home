@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
+import { Link } from "react-router-dom"
 import { HomeWrapper } from "./styles"
 import Input from "@material-ui/core/Input"
 import Checkbox from "@material-ui/core/Checkbox"
@@ -77,7 +78,7 @@ class Home extends Component {
         {recipes && (
           <List>
             {recipes.map((recipe) => (
-              <ListItem key={recipe.id}>
+              <ListItem component={Link} to={`/${recipe.id}`} key={recipe.id}>
                 <ListItemText primary={recipe.name} />
               </ListItem>
             ))}

@@ -46,7 +46,7 @@ module.exports = {
     publicPath: "/",
     filename: "[name].bundle.js",
     proxy: {
-      "/api/**": {
+      "/api": {
         target: "http://localhost:4000/",
         changeOrigin: true,
       },
@@ -60,7 +60,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "what can you make",
       template: buildTemplate,
-    }),
-    new webpack.HotModuleReplacementPlugin(),
+    })
   ],
 }
