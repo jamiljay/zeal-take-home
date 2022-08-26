@@ -1,6 +1,6 @@
 import React from "react"
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom"
@@ -9,12 +9,12 @@ import Home from "./Containers/Home"
 import Recipe from "./Containers/Recipe"
 
 const Rotuer = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/:recipeId" element={<Recipe />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 )
 
 export default Rotuer
