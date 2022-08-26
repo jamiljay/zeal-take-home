@@ -14,7 +14,8 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import * as actions from "../../actions"
 
-const ingredientList = ["flour", "sugar", "salt", "butter", "milk"]
+const INGREDIENT_LIST = ["flour", "sugar", "salt", "butter", "milk"]
+const DEFAULT_INGREDIENTS = JSON.parse(JSON.stringify(INGREDIENT_LIST));
 
 class Home extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Home extends Component {
     this.fetchSearch = this.fetchSearch.bind(this)
     this.state = {
       term: "",
-      ingredients: ["milk"],
+      ingredients: DEFAULT_INGREDIENTS,
     }
   }
   fetchSearch() {
@@ -59,7 +60,7 @@ class Home extends Component {
         />
         <div>
           <h3>Ingredients on hand</h3>
-          {ingredientList.map((ingredient) => (
+          {INGREDIENT_LIST.map((ingredient) => (
             <FormControlLabel
               key={ingredient}
               control={
